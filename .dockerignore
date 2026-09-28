@@ -1,0 +1,11 @@
+# Purpose: prevent secrets, Git metadata, and local artifacts from entering Docker build contexts.
+
+.env
+.env.*
+!.env.example
+.git
+node_modules
+npm-debug.log*
+coverage
+*.log
+**/dist

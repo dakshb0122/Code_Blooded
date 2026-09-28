@@ -1,0 +1,26 @@
+{
+  "name": "meow-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ईMAIL phone account API, IVR, and browser authentication",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "start:api": "node src/api/server.js",
+    "start:worker": "node src/worker/worker.js",
+    "dev:api": "node --watch --env-file=.env src/api/server.js",
+    "dev:worker": "node --watch --env-file=.env src/worker/worker.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "helmet": "^8.3.0",
+    "http-proxy-middleware": "^4.2.0",
+    "mongoose": "^9.10.2",
+    "nodemailer": "^10.0.10",
+    "telnyx": "^7.23.0"
+  }
+}

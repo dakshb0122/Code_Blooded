@@ -1,0 +1,8 @@
+<!-- Purpose: provide ईMAIL's orange cat mark as the browser tab icon. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="ईMAIL">
+  <rect width="48" height="48" rx="15" fill="#e96e45" />
+  <path d="M10 20 9 9l11 6a17 17 0 0 1 8 0l11-6-1 12a15 15 0 1 1-28 0Z" fill="#fff8ed" />
+  <circle cx="19" cy="24" r="1.5" fill="#542f27" />
+  <circle cx="29" cy="24" r="1.5" fill="#542f27" />
+  <path d="m22 29 2 2 2-2M13 28l6 1m16-1-6 1" fill="none" stroke="#542f27" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" />
+</svg>

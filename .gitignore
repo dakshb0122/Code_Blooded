@@ -1,0 +1,8 @@
+# Purpose: exclude local credentials, dependencies, and generated runtime artifacts from Git.
+
+.env
+.env.*
+!.env.example
+node_modules/
+coverage/
+*.log

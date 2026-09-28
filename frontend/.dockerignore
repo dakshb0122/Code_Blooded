@@ -1,0 +1,10 @@
+﻿# Purpose: omit frontend dependencies, generated output, and development-only assets from the image context.
+
+node_modules
+dist
+coverage
+*.log
+public/icons.svg
+src/assets/
+
+
