@@ -211,6 +211,7 @@ export default function App() {
   useEffect(() => {
     try { window.localStorage.setItem('meow-auth-language', language); }
     catch { /* Keep the selected language for this page even when storage is unavailable. */ }
+    document.documentElement.lang = language === 'hi' ? 'hi' : 'en';
   }, [language]);
 
   useEffect(() => {
@@ -381,7 +382,7 @@ export default function App() {
   }
 
   if (screen === 'loading') {
-    return <main className="loading-screen" aria-live="polite">Loading your ईMAIL account…</main>;
+    return <main className="loading-screen" aria-live="polite">{language === 'hi' ? 'आपका ईमेल खाता लोड हो रहा है…' : 'Loading your ईMAIL account…'}</main>;
   }
 
   if (screen === 'handoff') {
@@ -389,7 +390,7 @@ export default function App() {
   }
 
   if (screen === 'account' && currentUser) {
-    return <Mailbox user={currentUser} onSignOut={signOut} onAccountChanged={setCurrentUser} onAccountDeleted={accountDeleted} busy={busy} language={language} />;
+    return <Mailbox user={currentUser} onSignOut={signOut} onAccountChanged={setCurrentUser} onAccountDeleted={accountDeleted} busy={busy} language={language} onLanguageChange={setLanguage} />;
   }
 
   return (
@@ -405,12 +406,12 @@ export default function App() {
             />
           ))}
         </div>
-        <div className="brand-security-badge"><span aria-hidden="true">◆</span> Encrypted Mail</div>
+        <div className="brand-security-badge"><span aria-hidden="true">◆</span> {language === 'hi' ? 'एन्क्रिप्टेड मेल' : 'Encrypted Mail'}</div>
         <a className="auth-brand-logo" href="/" aria-label="ईMAIL mail home">
           <img src="/mailbox-logo.png" alt="&#x0908;MAIL logo" />
         </a>
-        <p className="brand-message">Secure, fast &amp; modern email<br />service for everyone.</p>
-        <div className="brand-footer"><span><i />Servers Online</span><span>V2.4 Pro</span></div>
+        <p className="brand-message">{language === 'hi' ? <>सुरक्षित, तेज़ और आधुनिक ईमेल<br />सेवा सभी के लिए।</> : <>Secure, fast &amp; modern email<br />service for everyone.</>}</p>
+        <div className="brand-footer"><span><i />{language === 'hi' ? 'सर्वर ऑनलाइन' : 'Servers Online'}</span><span>V2.4 Pro</span></div>
       </section>
 
       <section className="form-panel">
@@ -468,7 +469,7 @@ export default function App() {
             {mode === 'login' && (
               <>
                 <label htmlFor="password">{copy.password}</label>
-                <PasswordInput id="password" autoComplete="current-password" placeholder={copy.passwordPlaceholder} value={password} onChange={(event) => setPassword(event.target.value)} required visible={showPassword} onToggle={() => setShowPassword((visible) => !visible)} />
+                <PasswordInput id="password" autoComplete="current-password" placeholder={copy.passwordPlaceholder} value={password} onChange={(event) => setPassword(event.target.value)} required visible={showPassword} onToggle={() => setShowPassword((visible) => !visible)} language={language} />
                 <button className="text-link forgot-link" type="button" onClick={() => { setMode('password'); setResetCodeSent(false); setError(''); setNotice(''); }}>{copy.forgotPassword}</button>
               </>
             )}
@@ -478,7 +479,7 @@ export default function App() {
                 <label htmlFor="otp">{copy.otp}</label>
                 <input id="otp" type="text" inputMode="numeric" autoComplete="one-time-code" pattern="[0-9]{6}" maxLength={6} placeholder={copy.otpPlaceholder} value={otp} onChange={(event) => setOtp(event.target.value.replace(/\D/g, '').slice(0, 6))} required />
                 <label htmlFor="new-password">{copy.newPassword}</label>
-                <PasswordInput id="new-password" autoComplete="new-password" minLength={6} maxLength={128} placeholder={copy.newPasswordPlaceholder} value={newPassword} onChange={(event) => setNewPassword(event.target.value)} required visible={showNewPassword} onToggle={() => setShowNewPassword((visible) => !visible)} />
+                <PasswordInput id="new-password" autoComplete="new-password" minLength={6} maxLength={128} placeholder={copy.newPasswordPlaceholder} value={newPassword} onChange={(event) => setNewPassword(event.target.value)} required visible={showNewPassword} onToggle={() => setShowNewPassword((visible) => !visible)} language={language} />
                 <small className="field-help">{copy.otpHelp}</small>
               </>
             )}

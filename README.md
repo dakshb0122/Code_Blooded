@@ -44,7 +44,7 @@ The signed-in mailbox has Inbox, Starred, Sent, Drafts, Archive, and Trash views
 
 Users can change their profile picture from the account avatar in the sidebar. The browser crops and compresses it before the authenticated API stores it with the account.
 
-The signed-in mailbox includes an AI translator and suggested replies. Configure `OPENROUTER_API_KEY` in the local `.env` file; `OPENROUTER_MODEL` defaults to `openrouter/free`. Create a key from OpenRouter and keep it in `.env`, never in frontend code. The free router uses hosted models, so text submitted to these tools is sent to OpenRouter and the selected model provider. AI suggestions are not sent automatically. Free-model availability and quotas are controlled by OpenRouter and can change.
+The signed-in mailbox includes AI-assisted email drafting and suggested replies. Configure `OPENROUTER_API_KEY` in the local `.env` file; `OPENROUTER_MODEL` defaults to `openrouter/free`. Create a key from OpenRouter and keep it in `.env`, never in frontend code. The free router uses hosted models, so text submitted to these tools is sent to OpenRouter and the selected model provider. AI suggestions are not sent automatically. Free-model availability and quotas are controlled by OpenRouter and can change.
 
 ## API
 

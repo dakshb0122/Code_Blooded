@@ -1,7 +1,7 @@
-// Purpose: present the translation and suggested-reply AI tools after sign-in.
+// Purpose: present suggested-reply AI tools after sign-in.
 
-/** Render the private mailbox's AI feature panel and its clear provider disclosure. */
-export default function AiAssistantPanel({ configured, model, busy, onOpenTranslator }) {
+/** Render the private mailbox's suggested-reply AI panel and provider disclosure. */
+export default function AiAssistantPanel({ configured, model }) {
   return (
     <aside className="ai-panel assistant-panel" aria-label="AI email tools">
       <div className="ai-panel-heading">
@@ -26,16 +26,8 @@ export default function AiAssistantPanel({ configured, model, busy, onOpenTransl
         <div className="ai-copy assistant-copy">
           <span className="ai-eyebrow">EMAIL, WITH A LITTLE HELP</span>
           <h2>Make every message easier.</h2>
-          <p>Translate a message or find a thoughtful reply.</p>
+          <p>Find a thoughtful reply to your message.</p>
         </div>
-      </div>
-
-      <div className="assistant-actions">
-        <button className="assistant-action" type="button" onClick={onOpenTranslator} disabled={!configured || busy}>
-          <span className="assistant-action-icon translator-icon" aria-hidden="true">文</span>
-          <span><strong>AI Translator</strong><small>Hindi, English, and more</small></span>
-          <span className="assistant-action-arrow" aria-hidden="true">→</span>
-        </button>
       </div>
 
       <p className="ai-privacy-copy">

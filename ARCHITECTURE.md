@@ -72,7 +72,6 @@ flowchart LR
 | `PUT` / `DELETE` | `/api/v1/profile/picture` | Session cookie | Save or remove the signed-in user's profile picture. |
 | `GET` | `/api/v1/ai/status` | Session cookie | Report whether an OpenRouter key is configured. |
 | `POST` | `/api/v1/ai/write` | Session cookie | Create an editable email subject and body from a short prompt. |
-| `POST` | `/api/v1/ai/translate` | Session cookie | Translate text submitted by the signed-in user. |
 | `POST` | `/api/v1/ai/replies` | Session cookie | Suggest three reply drafts for a message the user opened. |
 | `POST` | `/webhooks/telnyx/voice` | Telnyx signature | Process call control events and DTMF. |
 | `POST` | `/webhooks/telnyx/messaging` | Telnyx signature | Record message delivery events. |

@@ -1,4 +1,4 @@
-// Purpose: call OpenRouter for user-requested email drafting and translation without persisting prompts.
+// Purpose: call OpenRouter for user-requested email drafting without persisting prompts.
 
 import { config } from './config.js';
 
@@ -61,20 +61,6 @@ async function requestOpenRouter(messages, maxTokens) {
     throw error;
   }
   return content.trim();
-}
-
-/** Translate text faithfully while preserving tone, meaning, and paragraph breaks. */
-export async function translateEmailText(text, targetLanguage, sourceLanguage = 'Auto-detect') {
-  return requestOpenRouter([
-    {
-      role: 'system',
-      content: 'Translate the supplied text faithfully into the requested language. Preserve the meaning, names, numbers, tone, and paragraph breaks. Return only the translated text with no explanation.',
-    },
-    {
-      role: 'user',
-      content: `Source language: ${sourceLanguage}\nTarget language: ${targetLanguage}\n\nText to translate:\n${text}`,
-    },
-  ], 4000);
 }
 
 /** Suggest three short, factual reply options for a message the user opened. */
