@@ -5,6 +5,7 @@
 ईMAIL provides phone-based account enrollment, password setup, sign-in, and a private internal email interface. A user enters an Indian mobile number, answers an outbound Telnyx call, and presses 1 in the IVR to create an account. Telnyx then sends an account confirmation SMS containing the user's phone number as their username. Signed-in users can exchange messages with existing ईMAIL users at their `@niti` account address.
 
 Youtube video link : https://youtu.be/7gDpSVvA5IA?si=KxTZpAczuU40vGnA
+Google drive link : https://drive.google.com/drive/folders/11rGBjJCIge_nyDRwbeoVErpwAIvG0-ut
 
 ## Containers
 
